@@ -33,14 +33,17 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My First App'),
-        ),
-        body: Column(
-          children: [...(questions.map((question) => Text(question)).toList())],
+        home: Scaffold(
+      appBar: AppBar(
+        title: const Text('My First App'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ...(questions.map((question) => Text(question)).toList()),
+          ],
         ),
       ),
-    );
+    ));
   }
 }
