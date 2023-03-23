@@ -5,6 +5,16 @@ void main() {
 }
 
 class MainApp extends StatelessWidget {
+  var questions = [
+    'What\'s your favorite color?',
+    'What\'s your favorite animal?',
+    'What\'s your favorite food?',
+    'What\'s your favorite movie?',
+    'What\'s your favorite song?',
+    'What\'s your favorite book?',
+    'What\'s your favorite game?',
+    'What\'s your favorite sport?',
+  ];
   MainApp({super.key});
 
   @override
@@ -14,7 +24,11 @@ class MainApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('My First App'),
         ),
-        body: Text('Hello World!'),
+        body: Column(
+          children: [
+            Text(questions[0]),
+          ],
+        ),
       ),
     );
   }
