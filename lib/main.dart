@@ -37,13 +37,11 @@ class MainApp extends StatelessWidget {
       appBar: AppBar(
         title: const Text('My First App'),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ...(questions.map((question) => Text(question)).toList()),
-          ],
-        ),
-      ),
+      body: ListView.builder(
+          itemCount: questions.length,
+          itemBuilder: (context, index) {
+            return Column(children: [Text(questions[index]), const Divider()]);
+          }),
     ));
   }
 }
