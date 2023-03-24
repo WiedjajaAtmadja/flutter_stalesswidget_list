@@ -34,14 +34,11 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: const Text('My First App'),
-      ),
-      body: ListView.builder(
-          itemCount: questions.length,
-          itemBuilder: (context, index) {
-            return Column(children: [Text(questions[index]), const Divider()]);
-          }),
-    ));
+            appBar: AppBar(
+              title: const Text('My First App'),
+            ),
+            body: Column(
+              children: [for (String str in questions) Text(str)],
+            )));
   }
 }
